@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | Student Wellness</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div class="container">
+
+            <h2>Student Wellness</h2>
+
+            <nav>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="assessment.html">Assessment</a>
+                <a href="history.html">History</a>
+                <a href="support.html">Support</a>
+                <button id="logoutBtn">Logout</button>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <div class="container">
+
+            <section class="welcome-section">
+
+                <h1>Welcome, <span id="studentName">Student</span></h1>
+
+                <p>
+                    Monitor your wellness and access support whenever you need it.
+                </p>
+
+            </section>
+
+
+            <!-- Wellness Overview -->
+
+            <section class="dashboard-grid">
+
+                <div class="dashboard-card">
+
+                    <h3>Wellness Score</h3>
+
+                    <div class="score">
+                        <span id="wellnessScore">--</span>
+                        <small>/100</small>
+                    </div>
+
+                    <p id="riskLevel">
+                        Complete an assessment to view your wellness status.
+                    </p>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <h3>Latest Mood</h3>
+
+                    <div class="large-value" id="latestMood">
+                        --
+                    </div>
+
+                    <p>
+                        Your latest recorded mood
+                    </p>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <h3>Assessments</h3>
+
+                    <div class="large-value" id="assessmentCount">
+                        0
+                    </div>
+
+                    <p>
+                        Completed assessments
+                    </p>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <h3>Support Requests</h3>
+
+                    <div class="large-value" id="supportCount">
+                        0
+                    </div>
+
+                    <p>
+                        Submitted requests
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Quick Actions -->
+
+            <section class="quick-actions">
+
+                <h2>Quick Actions</h2>
+
+                <div class="action-grid">
+
+                    <a href="assessment.html" class="action-card">
+
+                        <h3>Wellness Assessment</h3>
+
+                        <p>
+                            Complete a wellness assessment and understand your current status.
+                        </p>
+
+                    </a>
+
+
+                    <a href="history.html" class="action-card">
+
+                        <h3>Assessment History</h3>
+
+                        <p>
+                            View your previous wellness assessments and results.
+                        </p>
+
+                    </a>
+
+
+                    <a href="support.html" class="action-card">
+
+                        <h3>Request Support</h3>
+
+                        <p>
+                            Contact the counselling team for additional support.
+                        </p>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- Recommendations -->
+
+            <section class="recommendation-section">
+
+                <h2>Personalized Recommendations</h2>
+
+                <div id="recommendations">
+
+                    <p>
+                        Complete your first wellness assessment to receive
+                        personalized recommendations.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script typeR="module" src="../js/student.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Referral Management | Student Wellness</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <link rel="stylesheet"
+          href="../css/dashboard.css">
+
+    <style>
+
+        .referral-page {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .referral-header {
+            margin-bottom: 25px;
+        }
+
+        .referral-header h1 {
+            color: #12355b;
+            margin-bottom: 8px;
+        }
+
+        .referral-header p {
+            color: #666;
+        }
+
+        .referral-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .referral-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .referral-card h2 {
+            color: #12355b;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .referral-field {
+            margin-bottom: 18px;
+        }
+
+        .referral-field label {
+            display: block;
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 7px;
+        }
+
+        .referral-value {
+            padding: 11px;
+            background: #f4f7fb;
+            border-radius: 6px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .referral-card select,
+        .referral-card textarea {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .referral-card textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .referral-card select:focus,
+        .referral-card textarea:focus {
+            outline: none;
+            border-color: #1d5d9b;
+        }
+
+        .referral-actions {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .save-referral-btn {
+            padding: 11px 22px;
+            border: none;
+            border-radius: 6px;
+            background: #12355b;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .save-referral-btn:hover {
+            background: #1d5d9b;
+        }
+
+        .back-btn {
+            padding: 11px 22px;
+            border: none;
+            border-radius: 6px;
+            background: #ddd;
+            color: #333;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .back-btn:hover {
+            background: #ccc;
+        }
+
+        #referralMessage {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 700px) {
+
+            .referral-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .referral-actions {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <header class="dashboard-header">
+
+        <div class="container">
+
+            <h2>
+                Student Wellness
+            </h2>
+
+            <nav>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <button id="logoutBtn">
+                    Logout
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="dashboard">
+
+        <div class="container referral-page">
+
+
+            <div class="referral-header">
+
+                <h1>
+                    Referral Management
+                </h1>
+
+                <p>
+                    Review the student's academic concern
+                    and update the referral status.
+                </p>
+
+            </div>
+
+
+
+            <div class="referral-grid">
+
+
+                <!-- STUDENT REFERRAL -->
+
+                <div class="referral-card">
+
+                    <h2>
+                        Student Referral
+                    </h2>
+
+
+                    <div class="referral-field">
+
+                        <label>
+                            Student Email
+                        </label>
+
+                        <div class="referral-value"
+                             id="studentEmail">
+
+                            Loading...
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="referral-field">
+
+                        <label>
+                            Concern Type
+                        </label>
+
+                        <div class="referral-value"
+                             id="concernType">
+
+                            Loading...
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="referral-field">
+
+                        <label>
+                            Priority
+                        </label>
+
+                        <div class="referral-value"
+                             id="priority">
+
+                            Loading...
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="referral-field">
+
+                        <label>
+                            Date Submitted
+                        </label>
+
+                        <div class="referral-value"
+                             id="createdDate">
+
+                            Loading...
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="referral-field">
+
+                        <label>
+                            Student Concern
+                        </label>
+
+                        <div class="referral-value"
+                             id="concern">
+
+                            Loading...
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MANAGE REFERRAL -->
+
+                <div class="referral-card">
+
+                    <h2>
+                        Manage Referral
+                    </h2>
+
+
+                    <div class="referral-field">
+
+                        <label for="referralStatus">
+
+                            Referral Status
+
+                        </label>
+
+
+                        <select id="referralStatus">
+
+                            <option value="Pending">
+                                Pending
+                            </option>
+
+                            <option value="In Progress">
+                                In Progress
+                            </option>
+
+                            <option value="Resolved">
+                                Resolved
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="referral-field">
+
+                        <label for="facultyNotes">
+
+                            Faculty Notes
+
+                        </label>
+
+
+                        <textarea
+                            id="facultyNotes"
+                            placeholder="Enter observations, academic guidance or follow-up details..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="referral-actions">
+
+                        <button
+                            type="button"
+                            class="save-referral-btn"
+                            id="saveReferralBtn">
+
+                            Save Referral
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="back-btn"
+                            id="backBtn">
+
+                            Back to Dashboard
+
+                        </button>
+
+                    </div>
+
+
+                    <p id="referralMessage"></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <script
+        type="module"
+        src="../js/referral.js">
+    </script>
+
+
+</body>
+
+</html>

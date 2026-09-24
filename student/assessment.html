@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wellness Assessment | Student Wellness</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/forms.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div class="container">
+
+            <h2>Student Wellness</h2>
+
+            <nav>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="assessment.html">Assessment</a>
+                <a href="login.html">Logout</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main class="form-page">
+
+        <div class="form-container assessment-container">
+
+            <h1>Wellness Assessment</h1>
+
+            <p class="form-subtitle">
+                Answer the following questions honestly to understand
+                your current wellness status.
+            </p>
+
+
+            <form id="assessmentForm">
+
+
+                <!-- Stress -->
+
+                <div class="form-group">
+
+                    <label for="stress">
+                        1. How would you rate your current stress level?
+                    </label>
+
+                    <select id="stress" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="1">
+                            Very Low
+                        </option>
+
+                        <option value="2">
+                            Low
+                        </option>
+
+                        <option value="3">
+                            Moderate
+                        </option>
+
+                        <option value="4">
+                            High
+                        </option>
+
+                        <option value="5">
+                            Very High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Sleep -->
+
+                <div class="form-group">
+
+                    <label for="sleep">
+                        2. How would you rate your sleep quality?
+                    </label>
+
+                    <select id="sleep" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="5">
+                            Very Good
+                        </option>
+
+                        <option value="4">
+                            Good
+                        </option>
+
+                        <option value="3">
+                            Average
+                        </option>
+
+                        <option value="2">
+                            Poor
+                        </option>
+
+                        <option value="1">
+                            Very Poor
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Academic Pressure -->
+
+                <div class="form-group">
+
+                    <label for="academic">
+                        3. How much academic pressure are you experiencing?
+                    </label>
+
+                    <select id="academic" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="1">
+                            Very Low
+                        </option>
+
+                        <option value="2">
+                            Low
+                        </option>
+
+                        <option value="3">
+                            Moderate
+                        </option>
+
+                        <option value="4">
+                            High
+                        </option>
+
+                        <option value="5">
+                            Very High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Mood -->
+
+                <div class="form-group">
+
+                    <label for="mood">
+                        4. How would you describe your overall mood?
+                    </label>
+
+                    <select id="mood" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="5">
+                            Very Positive
+                        </option>
+
+                        <option value="4">
+                            Positive
+                        </option>
+
+                        <option value="3">
+                            Neutral
+                        </option>
+
+                        <option value="2">
+                            Low
+                        </option>
+
+                        <option value="1">
+                            Very Low
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Social Wellbeing -->
+
+                <div class="form-group">
+
+                    <label for="social">
+                        5. How connected do you feel with friends,
+                        classmates or family?
+                    </label>
+
+                    <select id="social" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="5">
+                            Very Connected
+                        </option>
+
+                        <option value="4">
+                            Connected
+                        </option>
+
+                        <option value="3">
+                            Neutral
+                        </option>
+
+                        <option value="2">
+                            Isolated
+                        </option>
+
+                        <option value="1">
+                            Very Isolated
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Energy -->
+
+                <div class="form-group">
+
+                    <label for="energy">
+                        6. How would you rate your energy level?
+                    </label>
+
+                    <select id="energy" required>
+
+                        <option value="">
+                            Select an option
+                        </option>
+
+                        <option value="5">
+                            Very High
+                        </option>
+
+                        <option value="4">
+                            High
+                        </option>
+
+                        <option value="3">
+                            Moderate
+                        </option>
+
+                        <option value="2">
+                            Low
+                        </option>
+
+                        <option value="1">
+                            Very Low
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Submit -->
+
+                <button type="submit" class="btn-primary">
+                    Submit Assessment
+                </button>
+
+
+                <p id="assessmentMessage"></p>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <script type="module" src="../js/assessment.js"></script>
+
+</body>
+
+</html>

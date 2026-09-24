@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administrator Dashboard</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         HEADER
+         ========================================== -->
+
+    <header class="dashboard-header">
+
+        <div class="container">
+
+            <h2>Student Wellness</h2>
+
+            <nav>
+                <a href="dashboard.html">Dashboard</a>
+
+                <button id="logoutBtn">
+                    Logout
+                </button>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================
+         MAIN DASHBOARD
+         ========================================== -->
+
+    <main class="dashboard">
+
+        <div class="container">
+
+
+            <!-- ==========================================
+                 WELCOME
+                 ========================================== -->
+
+            <section class="welcome-section">
+
+                <h1>Administrator Dashboard</h1>
+
+                <p>
+                    Monitor students, support cases and system activities.
+                </p>
+
+            </section>
+
+
+            <!-- ==========================================
+                 USER STATISTICS
+                 ========================================== -->
+
+            <section>
+
+                <div class="dashboard-grid">
+
+                    <!-- Total Students -->
+
+                    <div class="dashboard-card">
+
+                        <h3>Total Students</h3>
+
+                        <div
+                            class="large-value"
+                            id="studentCount">
+                            0
+                        </div>
+
+                        <p>
+                            Registered students
+                        </p>
+
+                    </div>
+
+
+                    <!-- Counsellors -->
+
+                    <div class="dashboard-card">
+
+                        <h3>Counsellors</h3>
+
+                        <div
+                            class="large-value"
+                            id="counsellorCount">
+                            0
+                        </div>
+
+                        <p>
+                            Registered counsellors
+                        </p>
+
+                    </div>
+
+
+                    <!-- Faculty -->
+
+                    <div class="dashboard-card">
+
+                        <h3>Faculty</h3>
+
+                        <div
+                            class="large-value"
+                            id="facultyCount">
+                            0
+                        </div>
+
+                        <p>
+                            Registered faculty
+                        </p>
+
+                    </div>
+
+
+                    <!-- Support Requests -->
+
+                    <div class="dashboard-card">
+
+                        <h3>Support Requests</h3>
+
+                        <div
+                            class="large-value"
+                            id="requestCount">
+                            0
+                        </div>
+
+                        <p>
+                            Total support requests
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==========================================
+                 SUPPORT CASE OVERVIEW
+                 ========================================== -->
+
+            <section class="quick-actions">
+
+                <h2>Support Case Overview</h2>
+
+                <div class="dashboard-grid">
+
+
+                    <!-- Pending -->
+
+                    <div class="dashboard-card">
+
+                        <h3>Pending</h3>
+
+                        <div
+                            class="large-value"
+                            id="pendingCount">
+                            0
+                        </div>
+
+                        <p>
+                            Requests waiting for action
+                        </p>
+
+                    </div>
+
+
+                    <!-- High Priority -->
+
+                    <div class="dashboard-card">
+
+                        <h3>High Priority</h3>
+
+                        <div
+                            class="large-value"
+                            id="highPriorityCount">
+                            0
+                        </div>
+
+                        <p>
+                            High priority requests
+                        </p>
+
+                    </div>
+
+
+                    <!-- In Progress -->
+
+                    <div class="dashboard-card">
+
+                        <h3>In Progress</h3>
+
+                        <div
+                            class="large-value"
+                            id="inProgressCount">
+                            0
+                        </div>
+
+                        <p>
+                            Active support cases
+                        </p>
+
+                    </div>
+
+
+                    <!-- Resolved -->
+
+                    <div class="dashboard-card">
+
+                        <h3>Resolved</h3>
+
+                        <div
+                            class="large-value"
+                            id="resolvedCount">
+                            0
+                        </div>
+
+                        <p>
+                            Completed support cases
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==========================================
+                 RECENT SUPPORT REQUESTS
+                 ========================================== -->
+
+            <section class="quick-actions">
+
+                <h2>Recent Support Requests</h2>
+
+                <div class="dashboard-card">
+
+                    <div class="table-container">
+
+                        <table id="adminRequestTable">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Date</th>
+
+                                    <th>Student</th>
+
+                                    <th>Support Type</th>
+
+                                    <th>Priority</th>
+
+                                    <th>Status</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="adminRequestTableBody">
+
+                                <tr>
+
+                                    <td colspan="5">
+                                        Loading requests...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==========================================
+                 USER MANAGEMENT
+                 ========================================== -->
+
+            <section class="quick-actions">
+
+                <h2>User Management</h2>
+
+                <div class="dashboard-card">
+
+
+                    <!-- Search and Filter -->
+
+                    <div class="user-controls">
+
+                        <input
+                            type="text"
+                            id="userSearch"
+                            placeholder="Search by name or email">
+
+
+                        <select id="roleFilter">
+
+                            <option value="all">
+                                All Roles
+                            </option>
+
+                            <option value="student">
+                                Student
+                            </option>
+
+                            <option value="counsellor">
+                                Counsellor
+                            </option>
+
+                            <option value="faculty">
+                                Faculty
+                            </option>
+
+                            <option value="administrator">
+                                Administrator
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- User Table -->
+
+                    <div class="table-container">
+
+                        <table id="userTable">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Name</th>
+
+                                    <th>Email</th>
+
+                                    <th>Role</th>
+
+                                    <th>Department</th>
+
+                                    <th>Created</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="userTableBody">
+
+                                <tr>
+
+                                    <td colspan="5">
+                                        Loading users...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+         ========================================== -->
+
+    <script
+        type="module"
+        src="../js/admin-dashboard.js">
+    </script>
+
+</body>
+
+</html>

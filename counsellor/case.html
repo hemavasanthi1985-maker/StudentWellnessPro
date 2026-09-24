@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Case Management | Student Wellness</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <link rel="stylesheet"
+          href="../css/dashboard.css">
+
+    <style>
+
+        .case-page {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .case-header {
+            margin-bottom: 25px;
+        }
+
+        .case-header h1 {
+            color: #12355b;
+            margin-bottom: 8px;
+        }
+
+        .case-header p {
+            color: #666;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .case-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .case-card h2 {
+            color: #12355b;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .case-field {
+            margin-bottom: 18px;
+        }
+
+        .case-field label {
+            display: block;
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 7px;
+        }
+
+        .case-value {
+            padding: 11px;
+            background: #f4f7fb;
+            border-radius: 6px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .case-card select,
+        .case-card textarea,
+        .case-card input {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .case-card textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .case-card select:focus,
+        .case-card textarea:focus,
+        .case-card input:focus {
+            outline: none;
+            border-color: #1d5d9b;
+        }
+
+        .case-actions {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .save-case-btn {
+            padding: 11px 22px;
+            border: none;
+            border-radius: 6px;
+            background: #12355b;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .save-case-btn:hover {
+            background: #1d5d9b;
+        }
+
+        .back-btn {
+            padding: 11px 22px;
+            border: none;
+            border-radius: 6px;
+            background: #ddd;
+            color: #333;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .back-btn:hover {
+            background: #ccc;
+        }
+
+        #caseMessage {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 700px) {
+
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-actions {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header class="dashboard-header">
+
+        <div class="container">
+
+            <h2>
+                Student Wellness
+            </h2>
+
+            <nav>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <button id="logoutBtn">
+                    Logout
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="dashboard">
+
+        <div class="container case-page">
+
+
+            <!-- PAGE TITLE -->
+
+            <div class="case-header">
+
+                <h1>
+                    Case Management
+                </h1>
+
+                <p>
+                    Review the student's support request
+                    and manage the counselling case.
+                </p>
+
+            </div>
+
+
+
+            <!-- CASE INFORMATION -->
+
+            <div class="case-grid">
+
+
+                <!-- STUDENT REQUEST -->
+
+                <div class="case-card">
+
+                    <h2>
+                        Student Request
+                    </h2>
+
+
+                    <div class="case-field">
+
+                        <label>
+                            Student Email
+                        </label>
+
+                        <div class="case-value"
+                             id="studentEmail">
+                            Loading...
+                        </div>
+
+                    </div>
+
+
+                    <div class="case-field">
+
+                        <label>
+                            Support Type
+                        </label>
+
+                        <div class="case-value"
+                             id="supportType">
+                            Loading...
+                        </div>
+
+                    </div>
+
+
+                    <div class="case-field">
+
+                        <label>
+                            Priority
+                        </label>
+
+                        <div class="case-value"
+                             id="priority">
+                            Loading...
+                        </div>
+
+                    </div>
+
+
+                    <div class="case-field">
+
+                        <label>
+                            Date Submitted
+                        </label>
+
+                        <div class="case-value"
+                             id="createdDate">
+                            Loading...
+                        </div>
+
+                    </div>
+
+
+                    <div class="case-field">
+
+                        <label>
+                            Student's Concern
+                        </label>
+
+                        <div class="case-value"
+                             id="description">
+                            Loading...
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CASE MANAGEMENT -->
+
+                <div class="case-card">
+
+                    <h2>
+                        Manage Case
+                    </h2>
+
+
+                    <div class="case-field">
+
+                        <label for="caseStatus">
+                            Case Status
+                        </label>
+
+                        <select id="caseStatus">
+
+                            <option value="Pending">
+                                Pending
+                            </option>
+
+                            <option value="In Progress">
+                                In Progress
+                            </option>
+
+                            <option value="Resolved">
+                                Resolved
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="case-field">
+
+                        <label for="followUpDate">
+                            Follow-up Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="followUpDate"
+                        >
+
+                    </div>
+
+
+                    <div class="case-field">
+
+                        <label for="counsellingNotes">
+                            Counselling Notes
+                        </label>
+
+                        <textarea
+                            id="counsellingNotes"
+                            placeholder="Enter counselling notes, observations or follow-up details..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="case-actions">
+
+                        <button
+                            type="button"
+                            class="save-case-btn"
+                            id="saveCaseBtn">
+
+                            Save Case
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="back-btn"
+                            id="backBtn">
+
+                            Back to Dashboard
+
+                        </button>
+
+                    </div>
+
+
+                    <p id="caseMessage"></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <script
+        type="module"
+        src="../js/case.js">
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Counsellor Dashboard | Student Wellness</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <link rel="stylesheet"
+          href="../css/dashboard.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header class="dashboard-header">
+
+        <div class="container">
+
+            <h2>Student Wellness</h2>
+
+            <nav>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <button id="logoutBtn">
+                    Logout
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================================
+         MAIN DASHBOARD
+    ================================= -->
+
+    <main class="dashboard">
+
+        <div class="container">
+
+
+            <!-- Welcome -->
+
+            <div class="welcome-section">
+
+                <h1>
+                    Welcome,
+                    <span id="counsellorName">
+                        Counsellor
+                    </span>
+                </h1>
+
+                <p>
+                    Manage student wellness support requests
+                    and counselling cases.
+                </p>
+
+            </div>
+
+
+
+            <!-- ================================
+                 STATISTICS
+            ================================= -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- Total Requests -->
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        Total Requests
+                    </h3>
+
+                    <div class="large-value"
+                         id="totalRequests">
+                        0
+                    </div>
+
+                    <p>
+                        All student support requests
+                    </p>
+
+                </div>
+
+
+
+                <!-- Pending -->
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        Pending
+                    </h3>
+
+                    <div class="large-value"
+                         id="pendingRequests">
+                        0
+                    </div>
+
+                    <p>
+                        Requests waiting for review
+                    </p>
+
+                </div>
+
+
+
+                <!-- High Priority -->
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        High Priority
+                    </h3>
+
+                    <div class="large-value"
+                         id="highPriorityRequests">
+                        0
+                    </div>
+
+                    <p>
+                        Requests requiring attention
+                    </p>
+
+                </div>
+
+
+
+                <!-- Resolved -->
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        Resolved
+                    </h3>
+
+                    <div class="large-value"
+                         id="resolvedRequests">
+                        0
+                    </div>
+
+                    <p>
+                        Completed support requests
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================
+                 SUPPORT REQUESTS
+            ================================= -->
+
+            <section class="quick-actions">
+
+                <h2>
+                    Student Support Requests
+                </h2>
+
+
+                <div class="dashboard-card">
+
+                    <div class="table-container">
+
+
+                        <table id="requestTable">
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Date
+                                    </th>
+
+                                    <th>
+                                        Support Type
+                                    </th>
+
+                                    <th>
+                                        Priority
+                                    </th>
+
+                                    <th>
+                                        Description
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Action
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+
+                            <tbody id="requestBody">
+
+                                <tr>
+
+                                    <td colspan="6">
+                                        Loading requests...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- JavaScript -->
+
+    <script
+        type="module"
+        src="../js/counsellor-dashboard.js">
+    </script>
+
+
+</body>
+
+</html>

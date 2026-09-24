@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Support Request | Student Wellness</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/forms.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div class="container">
+
+            <h2>Student Wellness</h2>
+
+            <nav>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="assessment.html">Assessment</a>
+                <a href="history.html">History</a>
+
+                <button id="logoutBtn">
+                    Logout
+                </button>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main class="form-page">
+
+        <div class="form-container">
+
+            <h1>Request Support</h1>
+
+            <p class="form-subtitle">
+                Tell us how we can support you.
+            </p>
+
+
+            <form id="supportForm">
+
+                <div class="form-group">
+
+                    <label for="supportType">
+                        Type of Support
+                    </label>
+
+                    <select id="supportType" required>
+
+                        <option value="">
+                            Select support type
+                        </option>
+
+                        <option value="Academic">
+                            Academic Support
+                        </option>
+
+                        <option value="Stress">
+                            Stress Management
+                        </option>
+
+                        <option value="Emotional">
+                            Emotional Support
+                        </option>
+
+                        <option value="Personal">
+                            Personal Concern
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="priority">
+                        Priority
+                    </label>
+
+                    <select id="priority" required>
+
+                        <option value="">
+                            Select priority
+                        </option>
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option value="Medium">
+                            Medium
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Describe Your Concern
+                    </label>
+
+                    <textarea
+                        id="description"
+                        rows="6"
+                        placeholder="Briefly describe what you need help with..."
+                        required
+                        style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; box-sizing: border-box; resize: vertical;">
+                    </textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn-primary">
+
+                    Submit Support Request
+
+                </button>
+
+
+                <p id="supportMessage"></p>
+
+            </form>
+
+
+            <p class="form-footer">
+
+                Your request will be reviewed by the
+                appropriate support team.
+
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <script type="module" src="../js/support.js"></script>
+
+</body>
+
+</html>

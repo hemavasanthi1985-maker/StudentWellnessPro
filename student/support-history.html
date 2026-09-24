@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Support Requests | Student Wellness</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div class="container">
+
+            <h2>Student Wellness</h2>
+
+            <nav>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="assessment.html">Assessment</a>
+                <a href="history.html">History</a>
+                <a href="support.html">Request Support</a>
+
+                <button id="logoutBtn">
+                    Logout
+                </button>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <div class="container">
+
+            <div class="welcome-section">
+
+                <h1>My Support Requests</h1>
+
+                <p>
+                    Track the support requests you have submitted
+                    and view their current status.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h2>Support Request History</h2>
+
+                <div class="table-container">
+
+                    <table id="supportTable">
+
+                        <thead>
+
+                            <tr>
+                                <th>Date</th>
+                                <th>Support Type</th>
+                                <th>Priority</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="supportBody">
+
+                            <tr>
+                                <td colspan="5">
+                                    Loading support requests...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script type="module" src="../js/support-history.js"></script>
+
+</body>
+
+</html>

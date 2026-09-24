@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assessment Result | Student Wellness</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div class="container">
+
+            <h2>Student Wellness</h2>
+
+            <nav>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="assessment.html">Assessment</a>
+                <a href="result.html">Result</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <div class="container">
+
+            <section class="welcome-section">
+
+                <h1>Wellness Assessment Result</h1>
+
+                <p>
+                    Here is the result of your latest wellness assessment.
+                </p>
+
+            </section>
+
+
+            <section class="dashboard-grid">
+
+                <div class="dashboard-card">
+
+                    <h3>Wellness Score</h3>
+
+                    <div class="score">
+                        <span id="score">--</span>
+                        <small>/100</small>
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <h3>Risk Level</h3>
+
+                    <div class="large-value" id="risk">
+                        --
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="recommendation-section">
+
+                <h2>Personalized Recommendations</h2>
+
+                <div id="recommendations"></div>
+
+            </section>
+
+
+            <section class="recommendation-section">
+
+                <a href="dashboard.html" class="btn-primary">
+                    Back to Dashboard
+                </a>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script type="module" src="../js/result.js"></script>
+
+</body>
+
+</html>
